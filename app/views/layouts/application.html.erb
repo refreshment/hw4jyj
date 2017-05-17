@@ -10,6 +10,9 @@
 
 <%= link_to "홈으로", root_url %> 
    <% if current_user %> 
+   
+   <%= link_to 'adimin 권한' , edit_user_path(current_user.id)%>
+   <%= link_to 'moder 권한' , users_moder_path(current_user.id)%>
        Logged in as <%= current_user.email %>. 
        <%= link_to "로그아웃", logout_path %> 
        <%= link_to "새글쓰기", new_content_path %> 

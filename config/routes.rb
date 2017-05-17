@@ -5,7 +5,7 @@ Rails.application.routes.draw do
    get 'login', to: 'sessions#new', as: 'login' 
    get 'logout', to: 'sessions#destroy', as: 'logout' 
 
-
+   get 'users/moder'
 
 
   root 'contents#index'
@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   end
 
 
-  resources :users
+  resources :users #, only: [:new, :create, :edit, :destroy]
   
-  resources :sessions
+  resources :sessions #, only: [:new, :create, :destroy] 오류남
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
